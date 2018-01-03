@@ -20,9 +20,11 @@ INICIO:        MOV   R1, 0                      ;Começar com os valores a zero(
 			   
 SENSOR_CARRO:  SUB   C1, 0
                ADD   R1, 1                       ;Sensor deteta um carro a entrar
-               JMP   CARRO_ENTRA
-CARRO_ENTRA:   ADD   R2, R1                      ;Soma o carro que entrou
                ADD   C1, 1
+               JMP   CARRO_ENTRA
+CARRO_ENTRA:   ADD   [R2], R1                      ;Soma o carro que entrou
+               ADD   R3, [R2]
+               ADD   C1, 0  
                JMP   SENSOR_CARRO 
 CARRO_SAI      ADD   R7, 1
                SUB   R2, 1
