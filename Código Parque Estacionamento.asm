@@ -8,7 +8,7 @@
 ;C1 - Cancela Entrada
 ;C2 - Cancela Saida
 ;0  - Desligado ou Fechado
-;1  - Ligado ou Aberto
+;1  - Ligado ou Aberto 
 
 INICIO:        MOV   R1, 0                      ;Começar com os valores a zero(Não existem carros no parque)
                MOV   R2, 0                      ;Começar com os valores a zero(Não existem carros no parque)
