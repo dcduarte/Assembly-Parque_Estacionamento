@@ -1,0 +1,20 @@
+﻿INICIO:			MOV   R1, 0                      
+               		MOV   R2, 0                      
+               		MOV   R3, 0                      
+               		MOV   R4, 0                      
+               		MOV   R5, 0                      
+               		MOV   R6, 0                      
+               		JMP   SENSOR_CARRO               
+			   
+SENSOR_CARRO:  		SUB   C1, 0
+               		ADD   R1, 1                       
+               		ADD   C1, 1
+               		JMP   CARRO_ENTRA
+CARRO_ENTRA:   		ADD   R2, R1                      
+               		ADD   R3, R2
+               		ADD   C1, 0  
+CARRO_SAI:      	SUB   [R2], 1
+               		JZ    SENSOR_CARRO
+               		ADD   R7, 1
+               		ADD   C2, 1
+               		JMP   SENSOR_CARRO
